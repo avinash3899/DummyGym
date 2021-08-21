@@ -33,6 +33,7 @@ const routes: Routes = [
         { path: 'about', component: AboutComponent },
         { path: 'trainers', component: TrainersComponent },
         { path: 'pricing', component: PricingComponent },
+        { path: 'payment', component: PaymentComponent },
         { path: 'contact', component: ContactComponent },
         { path: 'register', component: RegisterComponent },
         { path: 'login', component: LoginComponent }
@@ -48,6 +49,7 @@ const routes: Routes = [
         { path: 'about', component: AboutComponent },
         { path: 'trainers', component: TrainersComponent },
         { path: 'pricing', component: PricingComponent },
+        { path: 'payment', component: PaymentComponent },
         { path: 'contact', component: ContactComponent },
         { path: 'userProfile', component: UserProfileComponent },
         { path: 'userDashboard', component: UserDashboardComponent }
@@ -63,6 +65,7 @@ const routes: Routes = [
         { path: 'about', component: AboutComponent },
         { path: 'trainers', component: TrainersComponent },
         { path: 'pricing', component: PricingComponent },
+        { path: 'payment', component: PaymentComponent },
         { path: 'contact', component: ContactComponent },
         { path: 'userProfile', component: UserProfileComponent },
         { path: 'userDashboard', component: UserDashboardComponent },
