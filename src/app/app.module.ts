@@ -20,6 +20,7 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { AdminViewUsersComponent } from './admin-view-users/admin-view-users.component';
 import { AdminViewMessagesComponent } from './admin-view-messages/admin-view-messages.component';
 import { RegisterComponent } from './register/register.component';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/gym/home', pathMatch: 'full' }
@@ -36,7 +37,8 @@ const routes: Routes = [
         { path: 'payment', component: PaymentComponent },
         { path: 'contact', component: ContactComponent },
         { path: 'register', component: RegisterComponent },
-        { path: 'login', component: LoginComponent }
+        { path: 'login', component: LoginComponent },
+        { path: 'forgotpassword', component:ForgotpasswordComponent}
       ]
   }
   ,
@@ -52,7 +54,8 @@ const routes: Routes = [
         { path: 'payment', component: PaymentComponent },
         { path: 'contact', component: ContactComponent },
         { path: 'userProfile', component: UserProfileComponent },
-        { path: 'userDashboard', component: UserDashboardComponent }
+        { path: 'userDashboard', component: UserDashboardComponent },
+        { path: 'forgotpassword', component:ForgotpasswordComponent}
       ]
   }
   ,
@@ -70,7 +73,8 @@ const routes: Routes = [
         { path: 'userProfile', component: UserProfileComponent },
         { path: 'userDashboard', component: UserDashboardComponent },
         { path: 'adminViewUsers', component: AdminViewUsersComponent },
-        { path: 'adminViewMessages', component: AdminViewMessagesComponent }
+        { path: 'adminViewMessages', component: AdminViewMessagesComponent },
+        { path: 'forgotpassword', component:ForgotpasswordComponent}
 
       ]
   }
@@ -95,7 +99,8 @@ const routes: Routes = [
     UserDashboardComponent,
     AdminViewUsersComponent,
     AdminViewMessagesComponent,
-    RegisterComponent
+    RegisterComponent,
+    ForgotpasswordComponent
   ],
   imports: [
     BrowserModule,
