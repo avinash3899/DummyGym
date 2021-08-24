@@ -22,9 +22,13 @@ import { AdminViewMessagesComponent } from './admin-view-messages/admin-view-mes
 import { RegisterComponent } from './register/register.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
+
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+
 const routes: Routes = [
-  { path: '', redirectTo: '/gym/home', pathMatch: 'full' }
-  ,
+  { path: '', redirectTo: '/gym/home', pathMatch: 'full' },
   {
     path: 'gym', component: NavbarComponent,
     children:
@@ -105,6 +109,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

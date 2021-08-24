@@ -13,20 +13,21 @@
             <div class="col-md-8 contact-top">
                 <h3>Send us a message</h3>
                 <p class="contact_msg">Please fill in the details to get in touch with us.</p>
-                <form method="post" action="ContactUs">
+                <form (ngSubmit)="sendMessage()" >
                     <div class="to">
-                        <input type="text" class="text" value="Name" onfocus="this.value = '';"
+                        <input type="text" [(ngModel)]="contact.name" name="name" class="text" value="Name" onfocus="this.value = '';"
                             onblur="if (this.value == '') {this.value = 'Name';}">
-                        <input type="text" class="text" value="Email" onfocus="this.value = '';"
+                        <input type="text" [(ngModel)]="contact.email" name="email" class="text" value="Email" onfocus="this.value = '';"
                             onblur="if (this.value == '') {this.value = 'Email';}">
-                        <select name=subject>
-                            <option>Query</option>
-                            <option>Suggestion</option>
-                            <option>Feedback</option>
+                        <select [(ngModel)]="contact.messageType" name="subject">
+                            <option selected disabled>Subject</option>
+                            <option value="Query">Query</option>
+                            <option value="Suggestion">Suggestion</option>
+                            <option value="Feedback">Feedback</option>
                         </select>
                     </div>
                     <div class="text">
-                        <textarea value="Message:" onfocus="this.value = '';"
+                        <textarea [(ngModel)]="contact.message" name="message" value="Message:" onfocus="this.value = '';"
                             onblur="if (this.value == '') {this.value = 'Message';}" style="margin-top:10px">Message:
                         </textarea>
                     </div>

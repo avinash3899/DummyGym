@@ -1,33 +1,44 @@
 <div class="main">
   <div class="register-grids">
     <div class="container">
-      <form>
+      <form (ngSubmit)="createCustomer()">
         <div class="register-top-grid">
           <h3>PERSONAL INFORMATION</h3>
           <div>
             <span>First Name<label>*</label></span>
-            <input type="text">
+            <input type="text" [(ngModel)]="customer.firstName" name="firstName">
           </div>
           <div>
             <span>Last Name<label>*</label></span>
-            <input type="text">
+            <input type="text" [(ngModel)]="customer.lastName" name="lastName">
           </div>
           <div>
             <span>Email Address<label>*</label></span>
-            <input type="text">
+            <input type="email" [(ngModel)]="customer.email" name="email">
           </div>
-
+          <div>
+            <span>Address<label>*</label></span>
+            <input type="text" [(ngModel)]="customer.address" name="address">
+          </div>
+          <div>
+            <span>Date Of Birth<label>*</label></span>
+            <input type="date" [(ngModel)]="customer.dob" name="dob">
+          </div>
+          <div>
+            <span>Phone<label>*</label></span>
+            <input type="text" [(ngModel)]="customer.phone" name="phone">
+          </div>
         </div>
         <div class="clear"> </div>
         <div class="register-bottom-grid">
           <h3>LOGIN INFORMATION</h3>
           <div>
             <span>Password<label>*</label></span>
-            <input type="password">
+            <input type="password" [(ngModel)]="customer.password" name="password">
           </div>
           <div>
             <span>Confirm Password<label>*</label></span>
-            <input type="password">
+            <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword">
           </div>
           <div class="clear"> </div>
         </div>

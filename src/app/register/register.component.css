@@ -6,3 +6,11 @@
 	padding: 0.5em;
 	font-family: 'Open Sans', sans-serif;
 }
+.register-top-grid input[type="date"],.register-top-grid input[type="email"]{
+	border: 1px solid #EEE;
+	outline-color:#00BFF0;
+	width: 96%;
+	font-size: 1em;
+	padding: 0.5em;
+	font-family: 'Open Sans', sans-serif;
+}
