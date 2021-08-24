@@ -12,13 +12,16 @@ export class GymserviceService {
   constructor(private http: HttpClient) { }
 
 
-  createCustomer(customer:Customer):Observable<any>{
+  public createCustomer(customer:Customer):Observable<any>{
     return this.http.post(`${this.basePath}/createCustomer`, customer, {responseType: 'text'});
   }
 
-  sendMessage(message:Contact):Observable<any>{
+  public sendMessage(message:Contact):Observable<any>{
     return this.http.post(`${this.basePath}/sendMessage`, message, {responseType: 'text'});
   }
 
-  
+  public loginvalidate(email:string,password:string):Observable<any>{
+    return this.http.get(`${this.basePath}/loginvalidate/${email}/${password}`,{responseType:"text"});
+  }
+
 }

@@ -7,27 +7,34 @@ import { Contact } from '../contact';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  message!:string;
-  contact!:Contact;
-  constructor(private service:GymserviceService) { }
+  message!: string;
+  contact!: Contact;
+  constructor(private service: GymserviceService) { }
 
   ngOnInit(): void {
     this.contact = new Contact();
-    this.contact.name="Name";
-    this.contact.email="Email";
-    this.contact.messageType="Subject";
-    this.contact.message="Message:";
+    this.contact.name = "Name";
+    this.contact.email = "Email";
+    this.contact.messageType = "Subject";
+    this.contact.message = "Message:";
   }
 
-  sendMessage(){
+  sendMessage() {
     this.service.sendMessage(this.contact).subscribe(
-      data=>{
+      data => {
         this.message = data;
-        this.contact = new Contact();
+        console.log(data);
+        this.contact.name = "Name";
+        this.contact.email = "Email";
+        this.contact.messageType = "Subject";
+        this.contact.message = "Message:";
       },
-      error=>{
+      error => {
         console.log(error);
-        console.log(this.contact);
+        this.contact.name = "Name";
+        this.contact.email = "Email";
+        this.contact.messageType = "Subject";
+        this.contact.message = "Message:";
       }
     )
   }

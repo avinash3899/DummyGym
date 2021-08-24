@@ -13,7 +13,7 @@
             <div class="col-md-8 contact-top">
                 <h3>Send us a message</h3>
                 <p class="contact_msg">Please fill in the details to get in touch with us.</p>
-                <form (ngSubmit)="sendMessage()" >
+                <form (ngSubmit)="sendMessage()" autocomplete="off">
                     <div class="to">
                         <input type="text" [(ngModel)]="contact.name" name="name" class="text" value="Name" onfocus="this.value = '';"
                             onblur="if (this.value == '') {this.value = 'Name';}">

@@ -22,6 +22,7 @@ export class RegisterComponent implements OnInit {
     this.service.createCustomer(this.customer).subscribe(
       data=>{
         this.message=data;
+        console.log(data);
         this.customer=new Customer();
       },
       error=>{
