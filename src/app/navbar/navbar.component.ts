@@ -8,12 +8,17 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   sessionValue:any;
+  isAdmin:any;
   constructor(private router:Router) { }
 
   ngOnInit(): void {
     this.sessionValue=sessionStorage.getItem("email");
+    this.isAdmin=sessionStorage.getItem("isAdmin");
     if (this.sessionValue!=null) {
+      if(this.isAdmin=="no")
       this.router.navigate(['gym/user']);
+      else if(this.isAdmin=="yes")
+      this.router.navigate(['gym/admin']);
     }
   }
 

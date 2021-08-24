@@ -16,10 +16,14 @@ export class NavbarUserComponent implements OnInit {
     if(this.SessionValue == null ){
       this.router.navigate(['gym/login']);
     }
+    else if(this.SessionValue != null && sessionStorage.getItem("isAdmin")=="yes"){
+      this.router.navigate(['gym/admin']);
+    }
   }
 
   logout(){
     sessionStorage.removeItem("email");
+    sessionStorage.removeItem("isAdmin");
     this.router.navigate(['gym/login']);
   }
 

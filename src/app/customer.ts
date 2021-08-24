@@ -9,4 +9,5 @@ export class Customer {
     phone!: string;
     subscription!: string;
     paymentStatus!: string;
+    isAdmin!:string;
 }

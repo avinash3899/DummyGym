@@ -40,60 +40,57 @@
     </div>
   </nav>
   <router-outlet></router-outlet> -->
-  <div class="menu">
-    <div class="container-fluid">
-      <div class="logo">
-        <a routerLink="home"><img src="images/logo.png" alt="" /></a>
-      </div>
-      <div class="uname">
-        @adminname
-      </div>
-    
-      <div class="h_menu4">
-        <!-- start h_menu4 -->
-        <div class="navbar-header" style="text-align: center;">
-          <button class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"
-            style="width: 100%;margin-right: 0px;background:#00BFF0;color: #fff;">
-            Menu
-          </button>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav">
-            <li routerLinkActive="active"><a routerLink="home">Home</a></li>
-            <li routerLinkActive="active"><a routerLink="about">About</a></li>
-            <li routerLinkActive="active"><a routerLink="trainers">Trainers</a></li>
-            <li routerLinkActive="active"><a routerLink="pricing">Pricing</a></li>
-            <li routerLinkActive="active"><a routerLink="contact">Contact</a></li>
-            <li routerLinkActive="active"><a routerLink="userDashboard">Dashboard</a></li>
-            <li routerLinkActive="active"><a routerLink="userProfile">Profile</a></li>
-            <li routerLinkActive="active"><a routerLink="adminViewUsers">Customers</a></li>
-            <li routerLinkActive="active"><a routerLink="adminViewMessages">Messages</a></li>
-            <li routerLinkActive="active"><a data-toggle="modal" data-target="#myModal">Logout</a></li>
-          </ul>
-        </div>
-      </div><!-- end h_menu4 -->
-  
-      <div class="clear"></div>
-  
+<div class="menu">
+  <div class="container-fluid">
+    <div class="logo">
+      <a routerLink="home"><img src="images/logo.png" alt="" /></a>
     </div>
-  </div>
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
+    <div class="uname">
+      {{SessionValue}}
     </div>
+
+    <div class="h_menu4">
+      <!-- start h_menu4 -->
+      <div class="navbar-header" style="text-align: center;">
+        <button class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"
+          style="width: 100%;margin-right: 0px;background:#00BFF0;color: #fff;">
+          Menu
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav">
+          <li routerLinkActive="active"><a routerLink="home">Home</a></li>
+          <li routerLinkActive="active"><a routerLink="about">About</a></li>
+          <li routerLinkActive="active"><a routerLink="trainers">Trainers</a></li>
+          <li routerLinkActive="active"><a routerLink="pricing">Pricing</a></li>
+          <li routerLinkActive="active"><a routerLink="contact">Contact</a></li>
+          <li routerLinkActive="active"><a routerLink="userDashboard">Dashboard</a></li>
+          <li routerLinkActive="active"><a routerLink="userProfile">Profile</a></li>
+          <li routerLinkActive="active"><a routerLink="adminViewUsers">Customers</a></li>
+          <li routerLinkActive="active"><a routerLink="adminViewMessages">Messages</a></li>
+          <li routerLinkActive="active"><a data-toggle="modal" data-target="#myModal">Logout</a></li>
+        </ul>
+      </div>
+    </div><!-- end h_menu4 -->
+
+    <div class="clear"></div>
+
   </div>
-  <router-outlet></router-outlet>
+</div>
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+        <p>Are you sure ?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Cancel</button>
+        <button type="button" (click)="logout()" class="btn btn-danger" data-dismiss="modal">Logout</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<router-outlet></router-outlet>

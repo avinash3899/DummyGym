@@ -21,7 +21,7 @@ export class GymserviceService {
   }
 
   public loginvalidate(email:string,password:string):Observable<any>{
-    return this.http.get(`${this.basePath}/loginvalidate/${email}/${password}`,{responseType:"text"});
+    return this.http.get<any>(`${this.basePath}/loginvalidate/${email}/${password}`);
   }
 
 }
