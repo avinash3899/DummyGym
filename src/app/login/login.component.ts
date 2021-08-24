@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { GymserviceService } from '../gymservice.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class LoginComponent implements OnInit {
   email!: string;
   password!: string;
   reply!: string;
-  constructor(private service: GymserviceService) { }
+  constructor(private service: GymserviceService,private router: Router) { }
 
   ngOnInit(): void { }
 
@@ -20,12 +21,13 @@ export class LoginComponent implements OnInit {
         data => {
           this.reply = data;
           if (this.reply == "success") {
-            console.log("login successful");
+            sessionStorage.setItem("email",this.email);
+            this.router.navigate(['gym/user']);
           } else if (this.reply == "wrongPassword") {
-            console.log("login unsuccessful wrong password");
+            alert("login unsuccessful wrong password");
           }
           else {
-            console.log("account doesnt exist");
+            alert("account doesnt exist");
           }
         },
         error => {
