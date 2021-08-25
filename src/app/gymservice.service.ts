@@ -16,12 +16,49 @@ export class GymserviceService {
     return this.http.post(`${this.basePath}/createCustomer`, customer, {responseType: 'text'});
   }
 
+
   public sendMessage(message:Contact):Observable<any>{
     return this.http.post(`${this.basePath}/sendMessage`, message, {responseType: 'text'});
   }
 
+
   public loginvalidate(email:string,password:string):Observable<any>{
     return this.http.get<any>(`${this.basePath}/loginvalidate/${email}/${password}`);
+  }
+
+
+  public updateSubscription(email:string, subscription:string): Observable<any> {
+    return this.http.put(`${this.basePath}/updateSubscription/${email}`, subscription, {responseType : 'text'});
+  }
+
+
+  public resetPassword(customer:Customer):Observable<any>{
+    return this.http.post(`${this.basePath}/resetPassword`,customer, {responseType : 'text'});
+  }
+  
+
+  public getAllCustomer(): Observable<Customer[]> {
+    return this.http.get<Customer[]>(`${this.basePath}/allcustomer` );
+    
+  }
+
+
+  public deleteOneCustomer(id: number): Observable<any> {
+    return this.http.delete(`${this.basePath}/remove/${id}`, {responseType: 'text'});
+  }
+  
+  
+  public getCustomerByEmail(email:string):Observable<Customer>{
+    return this.http.get<Customer>(`${this.basePath}/getUserProfile/${email}`);
+  }
+
+  public getAllMessage(): Observable<Contact[]> {
+    return this.http.get<Contact[]>(`${this.basePath}/allmessages` );
+  }
+
+
+  public deleteOneMessage(id: number): Observable<any> {
+    return this.http.delete(`${this.basePath}/removeMessage/${id}`, {responseType: 'text'});
   }
 
 }

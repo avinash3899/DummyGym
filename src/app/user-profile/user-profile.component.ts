@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Customer } from '../customer';
+import { GymserviceService } from '../gymservice.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -7,9 +9,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileComponent implements OnInit {
 
-  constructor() { }
+  customerProfile!: Customer;
+  sessionValue: any;
+  constructor(private service: GymserviceService) { }
 
   ngOnInit(): void {
+    this.sessionValue = sessionStorage.getItem("email");
+    this.customerProfile=new Customer();
+    this.fetchCustomerProfile(this.sessionValue);
+  }
+
+  fetchCustomerProfile(email:string) {
+    this.service.getCustomerByEmail(email).subscribe(
+      data=>{
+        this.customerProfile=data;
+        console.log(data);
+      },
+      error=>{
+        console.log(error);
+      }
+    )
+  }
+
+  changePassword(){
+    this.service.resetPassword(this.customerProfile).subscribe(
+      data=>{
+        alert(data);
+      },
+      error=>{
+        alert(error);
+      }
+    )
   }
 
 }

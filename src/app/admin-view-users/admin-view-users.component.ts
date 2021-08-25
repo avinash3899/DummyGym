@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Customer } from '../customer';
+import { GymserviceService } from '../gymservice.service';
 
 @Component({
   selector: 'app-admin-view-users',
@@ -7,9 +9,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminViewUsersComponent implements OnInit {
 
-  constructor() { }
+  customer! : Customer[];
+  message! : string;
+  constructor(private service: GymserviceService) { }
 
   ngOnInit(): void {
+    this.getAllCustomer();
+  }
+
+  getAllCustomer(){
+    this.service.getAllCustomer().subscribe(
+      data =>{
+        this.customer=data;
+      }, error => { 
+        console.error();
+      }  
+    );
+
+  }
+
+  deleteOneCustomer(id: number)
+  {
+    if(confirm('do you want to delete ?'))
+    {
+      this.service.deleteOneCustomer(id)
+      .subscribe(
+        data => {
+          this.message=data;
+          this.getAllCustomer();
+        }, error =>{ 
+          console.error();
+        }
+      );
+    }else{
+      this.message='';
+    }
   }
 
 }

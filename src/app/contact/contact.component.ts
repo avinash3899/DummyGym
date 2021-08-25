@@ -9,21 +9,35 @@ import { Contact } from '../contact';
 export class ContactComponent implements OnInit {
   message!: string;
   contact!: Contact;
+  name!:any;
+  email!:any;
   constructor(private service: GymserviceService) { }
 
   ngOnInit(): void {
     this.contact = new Contact();
-    this.contact.name = "Name";
-    this.contact.email = "Email";
-    this.contact.messageType = "Subject";
-    this.contact.message = "Message:";
+    if (sessionStorage.getItem("email") != null) {
+      this.name=sessionStorage.getItem("name");
+      this.email=sessionStorage.getItem("email");
+      this.contact.name = this.name;
+      this.contact.email = this.email;
+      this.contact.messageType = "Subject";
+      this.contact.message = "Message:";
+
+    } else {
+      this.contact.name = "Name";
+      this.contact.email = "Email";
+      this.contact.messageType = "Subject";
+      this.contact.message = "Message:";
+    }
   }
 
   sendMessage() {
     this.service.sendMessage(this.contact).subscribe(
       data => {
         this.message = data;
-        console.log(data);
+        if (this.message!=null) {
+          alert("Message Sent");
+        }
         this.contact.name = "Name";
         this.contact.email = "Email";
         this.contact.messageType = "Subject";
@@ -31,6 +45,7 @@ export class ContactComponent implements OnInit {
       },
       error => {
         console.log(error);
+        alert("Message not sent");
         this.contact.name = "Name";
         this.contact.email = "Email";
         this.contact.messageType = "Subject";

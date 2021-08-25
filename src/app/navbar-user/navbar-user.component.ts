@@ -12,7 +12,7 @@ export class NavbarUserComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit(): void {
-    this.SessionValue = sessionStorage.getItem("email");
+    this.SessionValue = sessionStorage.getItem("name");
     if(this.SessionValue == null ){
       this.router.navigate(['gym/login']);
     }
@@ -23,6 +23,7 @@ export class NavbarUserComponent implements OnInit {
 
   logout(){
     sessionStorage.removeItem("email");
+    sessionStorage.removeItem("name");
     sessionStorage.removeItem("isAdmin");
     this.router.navigate(['gym/login']);
   }

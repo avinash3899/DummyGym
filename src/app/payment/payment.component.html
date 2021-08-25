@@ -8,8 +8,9 @@
     <br><br>
     <div class="jumbotron" style="border: 2px solid;">
       <h1>Payment Details</h1>
+      <span>Plan Selected : {{subscription}}</span>
       <br><br>
-      <form>
+      <form (ngSubmit)="makePayment()">
         <div class="row">
           <div class="form-group col-md-6">
             <label for="inputEmail4">Name</label>
@@ -24,8 +25,8 @@
         <div class="row">
 
           <div class="form-group col-md-6">
-            <label for="inputState">Validity date</label>
-            <input type="month" value="2021-09" class="form-control">
+            <label for="inputState">Expiration date</label>
+            <input type="text" placeholder="MM/YY" class="form-control">
           </div>
           <div class="form-group col-md-6">
             <label for="inputZip">CVV</label>
@@ -44,9 +45,9 @@
         </div>
         <div class="row">
           <div class="form-group col-md-12">
-            <button type="submit" class="btn btn-primary">Make Payment</button>
+            <input type="submit" class="btn btn-primary" value="Make Payment"/>
             <span>&nbsp;&nbsp;&nbsp;</span>
-            <button type="submit" class="btn btn-danger">Cancel</button>
+            <button type="submit" class="btn btn-danger" routerLink="../../pricing">Cancel</button>
           </div>
         </div>
       </form>

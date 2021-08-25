@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit(): void {
-    this.sessionValue=sessionStorage.getItem("email");
+    this.sessionValue=sessionStorage.getItem("name");
     this.isAdmin=sessionStorage.getItem("isAdmin");
     if (this.sessionValue!=null) {
       if(this.isAdmin=="no")

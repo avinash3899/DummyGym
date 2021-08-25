@@ -8,6 +8,5 @@ export class Customer {
     address!: string;
     phone!: string;
     subscription!: string;
-    paymentStatus!: string;
     isAdmin!:string;
 }

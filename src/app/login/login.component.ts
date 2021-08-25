@@ -22,11 +22,13 @@ export class LoginComponent implements OnInit {
           this.reply = data;
           if (this.reply[0] == "success") {
             if (this.reply[2] == "no") {
-              sessionStorage.setItem("email", this.reply[1]);
+              sessionStorage.setItem("email",this.email);
+              sessionStorage.setItem("name", this.reply[1]);
               sessionStorage.setItem("isAdmin",this.reply[2]);
               this.router.navigate(['gym/user']);
             } else if (this.reply[2] == "yes") {
-              sessionStorage.setItem("email", this.reply[1]);
+              sessionStorage.setItem("email",this.email);
+              sessionStorage.setItem("name", this.reply[1]);
               sessionStorage.setItem("isAdmin",this.reply[2]);
               this.router.navigate(['gym/admin']);
             }
