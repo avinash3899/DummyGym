@@ -6,27 +6,27 @@
           <h3>PERSONAL INFORMATION</h3>
           <div>
             <span>First Name<label>*</label></span>
-            <input type="text" [(ngModel)]="customer.firstName" name="firstName">
+            <input type="text" [(ngModel)]="customer.firstName" name="firstName" required>
           </div>
           <div>
             <span>Last Name<label>*</label></span>
-            <input type="text" [(ngModel)]="customer.lastName" name="lastName">
+            <input type="text" [(ngModel)]="customer.lastName" name="lastName" required>
           </div>
           <div>
             <span>Email Address<label>*</label></span>
-            <input type="email" [(ngModel)]="customer.email" name="email">
+            <input type="email" [(ngModel)]="customer.email" name="email" required>
           </div>
           <div>
             <span>Address<label>*</label></span>
-            <input type="text" [(ngModel)]="customer.address" name="address">
+            <input type="text" [(ngModel)]="customer.address" name="address" required >
           </div>
           <div>
             <span>Date Of Birth<label>*</label></span>
-            <input type="date" [(ngModel)]="customer.dob" name="dob">
+            <input type="date" [(ngModel)]="customer.dob" name="dob" required>
           </div>
           <div>
             <span>Phone<label>*</label></span>
-            <input type="text" [(ngModel)]="customer.phone" name="phone">
+            <input type="text" [(ngModel)]="customer.phone" name="phone" required>
           </div>
         </div>
         <div class="clear"> </div>
@@ -34,11 +34,11 @@
           <h3>LOGIN INFORMATION</h3>
           <div>
             <span>Password<label>*</label></span>
-            <input type="password" [(ngModel)]="customer.password" name="password">
+            <input type="password" [(ngModel)]="customer.password" name="password" required>
           </div>
           <div>
             <span>Confirm Password<label>*</label></span>
-            <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword">
+            <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required>
           </div>
           <div class="clear"> </div>
         </div>

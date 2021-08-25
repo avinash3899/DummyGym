@@ -23,11 +23,13 @@ export class RegisterComponent implements OnInit {
       data=>{
         this.message=data;
         console.log(data);
+        alert(data);
         this.customer=new Customer();
       },
       error=>{
         console.log(error);
         console.log(this.customer);
+        alert(error);
         this.customer=new Customer;
       }
     );
