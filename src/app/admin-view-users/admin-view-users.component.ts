@@ -28,8 +28,12 @@ export class AdminViewUsersComponent implements OnInit {
 
   }
 
-  deleteOneCustomer(id: number)
+  deleteOneCustomer(id: number,email:string)
   {
+    if(email==sessionStorage.getItem("email")){
+      alert("Could not delete currntly loged in user.");
+      return;
+    }
     if(confirm('do you want to delete ?'))
     {
       this.service.deleteOneCustomer(id)

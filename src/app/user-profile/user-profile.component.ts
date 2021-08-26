@@ -10,6 +10,7 @@ import { GymserviceService } from '../gymservice.service';
 export class UserProfileComponent implements OnInit {
 
   customerProfile!: Customer;
+  cpassword!:string;
   sessionValue: any;
   constructor(private service: GymserviceService) { }
 
@@ -17,12 +18,14 @@ export class UserProfileComponent implements OnInit {
     this.sessionValue = sessionStorage.getItem("email");
     this.customerProfile=new Customer();
     this.fetchCustomerProfile(this.sessionValue);
+    
   }
 
   fetchCustomerProfile(email:string) {
     this.service.getCustomerByEmail(email).subscribe(
       data=>{
         this.customerProfile=data;
+        this.customerProfile.password="";
         console.log(data);
       },
       error=>{
@@ -35,6 +38,8 @@ export class UserProfileComponent implements OnInit {
     this.service.resetPassword(this.customerProfile).subscribe(
       data=>{
         alert(data);
+        this.customerProfile.password="";
+        this.cpassword="";
       },
       error=>{
         alert(error);

@@ -1,13 +1,3 @@
-body{
-    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
-}
-.emp-profile{
-    padding: 3%;
-    margin-top: 3%;
-    margin-bottom: 3%;
-    border-radius: 0.5rem;
-    background: #fff;
-}
 .profile-img{
     text-align: center;
 }
@@ -31,83 +21,48 @@ body{
     right: 0;
     top: 0;
 }
-.profile-head h5{
-    color: #333;
-}
-.profile-head h6{
-    color: #0062cc;
-}
-.profile-edit-btn{
+.nav-pills li a{
     border: none;
-    border-radius: 1.5rem;
-    width: 70%;
-    padding: 2%;
-    font-weight: 600;
-    color: #6c757d;
-    cursor: pointer;
+    color: dodgerblue;
+    width: 100%;
+    text-align: center;
 }
-.proile-rating{
-    font-size: 12px;
-    color: #818182;
-    margin-top: 5%;
-}
-.proile-rating span{
-    color: #495057;
-    font-size: 15px;
-    font-weight: 600;
-}
-.profile-head .nav-tabs{
-    margin-bottom:5%;
-}
-.profile-head .nav-tabs .nav-link{
-    font-weight:600;
+.nav-pills li.active a{
     border: none;
+    color: white;
+    text-align: center;
+    background-color: #72D0F4;
 }
-.profile-head .nav-tabs .nav-link.active{
-    border: none;
-    border-bottom:2px solid #0062cc;
+
+.profile-container{
+    background-color: white; 
+    padding: 30px; 
+    margin-top: 100px; 
+    margin-bottom: 100px;
+    border-radius: 20px;
+}
+.nav>li{
+    float: none;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-bottom: 1px solid gainsboro;
     
 }
-button:hover, a:hover {
-    opacity: 0.7;
-  }
-  button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: rgb(117, 161, 241);
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-    font-size: 10px;
-  }
+.nav>li:first-child{
+    border-top: 1px solid gainsboro;
+}
 
-.profile-work{
-    padding: 14%;
-    margin-top: -15%;
+input[type="password"]{
+	border: 1px solid #EEE;
+	outline-color:#00BFF0;
+	width: 96%;
+	font-size: 1em;
+	padding: 0.5em;
+	font-family: 'Open Sans', sans-serif;
 }
-.profile-work p{
-    font-size: 12px;
-    color: #818182;
-    font-weight: 600;
-    margin-top: 10%;
+
+@media screen and (max-width: 768px) {
+	.profile-container{
+		margin:20px
+	}
 }
-.profile-work a{
-    text-decoration: none;
-    color: #000305;
-    font-weight: 600;
-    font-size: 14px;
-}
-.profile-work ul{
-    list-style: none;
-}
-.profile-tab label{
-    font-weight: 600;
-}
-.profile-tab p{
-    font-weight: 600;
-    color: #0062cc;
-}
- 

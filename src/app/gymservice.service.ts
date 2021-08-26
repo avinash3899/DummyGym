@@ -61,4 +61,8 @@ export class GymserviceService {
     return this.http.delete(`${this.basePath}/removeMessage/${id}`, {responseType: 'text'});
   }
 
+  public sendOTP(email:string,otp:string):Observable<any>{
+    return this.http.get(`https://maker.ifttt.com/trigger/otpservice/with/key/bc7uopg2Kew0xxhrCuLiue?value1=${email}&value2=${otp}`,{responseType : 'text'});
+  }
+
 }

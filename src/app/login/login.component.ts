@@ -11,9 +11,10 @@ export class LoginComponent implements OnInit {
   email!: string;
   password!: string;
   reply!: string[];
+  errorMessage!:string;
   constructor(private service: GymserviceService, private router: Router) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   loginvalidate() {
     this.service.loginvalidate(this.email, this.password).subscribe
@@ -33,10 +34,10 @@ export class LoginComponent implements OnInit {
               this.router.navigate(['gym/admin']);
             }
           } else if (this.reply[0] == "wrongPassword") {
-            alert("login unsuccessful wrong password");
+            this.errorMessage="Invalid Password";
           }
           else {
-            alert("account doesnt exist");
+            this.errorMessage="Invalid User";
           }
         },
         error => {

@@ -14,3 +14,7 @@
 	padding: 0.5em;
 	font-family: 'Open Sans', sans-serif;
 }
+.register-grids input[type="submit"]:disabled{
+	background-color: gray;
+	opacity: 0.3;
+}
